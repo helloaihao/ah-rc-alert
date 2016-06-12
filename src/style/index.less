@@ -2,8 +2,47 @@
 
 .@{alert-prefix-cls} {
   position: fixed;
+  width: 500px;
   padding: 8px;
   border-radius: 6px;
+  top: 20px;
   left: 50%;
   transform: translate(-50%, 0);
+  border: 1px solid #d5f1fd;
+  background-color: #eaf8fe;
+  color: #666;
+  font-family: "微软雅黑";
+  text-align: center;
+
+  &-message {
+    font-size: 14px;
+    display: block;
+    width: 470px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
+  &-close-icon {
+    font-size: 14px;
+    position: absolute;
+    top: 50%;
+    margin-top: -11px;
+    right: 16px;
+    cursor: pointer;
+    color: #2db7f5;
+
+    &:hover {
+      color: #57c5f7;
+    }
+  }
+
+  &-default-icon {
+    color: #999;
+    font-style: normal;
+
+    &:hover {
+      color: #444;
+    }
+  }
 }

@@ -1,7 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
 var autoprefixer = require('autoprefixer');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
     entry: [
@@ -19,7 +18,6 @@ module.exports = {
                 'NODE_ENV': JSON.stringify('production')
             }
         }),
-        new ExtractTextPlugin("index.less"),
         new webpack.optimize.UglifyJsPlugin({
             compressor: {
                 warnings: false
@@ -37,7 +35,7 @@ module.exports = {
             loader: 'style!css!postcss!less'
         }, {
             test: /\.css/,
-            loader: ExtractTextPlugin.extract('style', 'css', 'postcss')
+            loader: 'style!css'
         }, {
             test: /\.(png|jpg)$/,
             loader: 'url?limit=25000'
