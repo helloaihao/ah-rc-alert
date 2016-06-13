@@ -1,18 +1,16 @@
 @alert-prefix-cls: ah-alert;
 
 .@{alert-prefix-cls} {
-  position: fixed;
+  position: relative;
   width: 500px;
   padding: 8px;
   border-radius: 6px;
-  top: 20px;
-  left: 50%;
-  transform: translate(-50%, 0);
   border: 1px solid #d5f1fd;
   background-color: #eaf8fe;
   color: #666;
   font-family: "微软雅黑";
   text-align: center;
+  margin-top: 10px;
 
   &-message {
     font-size: 14px;
@@ -45,4 +43,11 @@
       color: #444;
     }
   }
+}
+
+.ah-alert-group {
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  position: fixed;
 }
