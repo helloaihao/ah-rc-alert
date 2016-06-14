@@ -2,19 +2,23 @@ import React from 'react';
 
 export default class Alert extends React.Component {
     static defaultProps = {
-        prefixCls: 'ah-alert',
-        type: 'info'
+        prefixCls: 'ah-alert'
+    };
+
+    static propTypes = {
+        prefixCls: React.PropTypes.string,
+        closeText: React.PropTypes.string,
+        message: React.PropTypes.string
     };
 
     constructor(props) {
         super(props);
         this.state = {closed: false};
-        this.handleClose = this.handleClose.bind(this);
     }
 
-    handleClose(e) {
+    handleClose = (e) => {
         this.setState({closed: true});
-        this.props.onClose.call(this, e);
+        this.props.onClose ? this.props.onClose.call(this, e) : null;
     }
 
     render() {
